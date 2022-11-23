@@ -8,33 +8,29 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 
-        <title>Jawara | Customer Portal</title>
-        <link rel="shortcut icon" href="Logo.png">
-        
+        <title>Jawara FMS | Customer Portal</title>
     </head>
     <body>
       <body style="background-color:#e2e2dc;"></body>
       <!-- NAVBAR MENU -->
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
-          <img src="Logo.png" style="width: 30px; height: 30px;">
-        </a>
-          <a class="navbar-brand" href="homepage.html">JAWARA</a>
+          <a class="navbar-brand" href="\homepage.html">JAWARA FMS</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="homepage.html">Home</a>
+                <a class="nav-link" href="\homepage.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="store.html">Store</a>
+                <a class="nav-link" href="\store.html">Store</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Customer Portal</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="homepage.html">Logout</a></li>
+                  <li><a class="dropdown-item" href="\homepage.html">Logout</a></li>
                 </ul>
               </li>
             </ul>
@@ -59,13 +55,13 @@
         <div class="d-flex flex-wrap justify-content-center p-3">
           <!-- Welcome Column -->
           <div class="p-2">
-            <h4 class="text-center">Welcome Back, John Smith</h4> 
+            <h4 class="text-center">Welcome Back, {{name}}</h4> 
             <ul class="nav flex-column">
               <li class="nav-item">
                 <p>
-                  <h6>Email: </h6>
+                  <h6><strong>Email: </strong></h6>
                   <p>
-                    <div>youremail@domain.com</div>
+                    <div>{{email}}</div>
                   </p>
                   <button type="button" class="btn btn-primary btn-dark w-100" data-bs-toggle="modal" data-bs-target="#updateAccountInformationModal">Update Account Details</button>
                 </p>
@@ -80,11 +76,11 @@
                       <div class="modal-body">
                         <h6>Account Details</h6>
                         <p>
-                          <form class="needs-validation" novalidate>
+                          <form class="needs-validation" novalidate action="/updated_email" method="post">
                             <div class="form-row">
                               <div class="mb-3">
-                                <label for="validationCustom01">New Email</label>
-                                <input type="text" class="form-control" id="validationCustom01" placeholder="Email" required>
+                                <label for="email_input">New Email</label>
+                                <input type="text" class="form-control" id="email_input" name = "email_input"  placeholder="Email" required>
                                 <div class="invalid-feedback">
                                   Please provide a valid email.
                                 </div>
@@ -130,12 +126,12 @@
               </li>
               <li class="nav-item">
                 <p>
-                  <h6>Billing Details</h6>
+                  <h6><strong>Billing Details</strong></h6>
                   <p>
-                    <div>Billing Recipient: -</div>
-                    <div>Billing Address: -</div>
-                    <div>Billing Postcode: -</div>
-                    <div>Billing Country: -</div>
+                    <div><strong>Billing Recipient: </strong>{{billing_details.recipient}}</div>
+                    <div><strong>Billing Address: </strong>{{billing_details.address}}</div>
+                    <div><strong>Billing Postcode: </strong>{{billing_details.postcode}}</div>
+                    <div><strong>Billing Country: </strong>{{billing_details.country}}</div>
                   </p>
                   <button type="button" class="btn btn-primary btn-dark w-100" data-bs-toggle="modal" data-bs-target="#updateBillingInformationModal">Update Billing Details</button>
                 </p>
@@ -148,20 +144,20 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        <h6>Billing Details</h6>
+                        <h6><strong>Billing Details</strong></h6>
                         <p>
-                          <form class="needs-validation" novalidate>
+                          <form class="needs-validation" novalidate action="/updated_billing_info" method="post">
                             <div class="form-row">
                               <div class=" mb-3">
-                                <label for="validationCustom01">First Name</label>
-                                <input type="text" class="form-control" id="validationCustom01" placeholder="First Name" required>
+                                <label for="first_name_billing_input">First Name</label>
+                                <input type="text" class="form-control" id="first_name_billing_input" name="first_name_billing_input" placeholder="First Name" required>
                                 <div class="valid-feedback">
                                   Looks good!
                                 </div>
                               </div>
                               <div class=" mb-3">
-                                <label for="validationCustom02">Last Name</label>
-                                <input type="text" class="form-control" id="validationCustom02" placeholder="Last Name" required>
+                                <label for="last_name_billing_input">Last Name</label>
+                                <input type="text" class="form-control" id="last_name_billing_input" name="last_name_billing_input" placeholder="Last Name" required>
                                 <div class="valid-feedback">
                                   Looks good!
                                 </div>
@@ -169,29 +165,29 @@
                             </div>
                             <div class="form-row">
                               <div class="mb-3">
-                                <label for="validationCustom03">City</label>
-                                <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+                                <label for="city_billing_input">City</label>
+                                <input type="text" class="form-control" id="city_billing_input" name="city_billing_input" placeholder="City" required>
                                 <div class="invalid-feedback">
                                   Please provide a valid city.
                                 </div>
                               </div>
                               <div class="mb-3">
-                                <label for="validationCustom04">County</label>
-                                <input type="text" class="form-control" id="validationCustom04" placeholder="County" required>
+                                <label for="county_billing_input">County</label>
+                                <input type="text" class="form-control" id="county_billing_input" name="county_billing_input" placeholder="County" required>
                                 <div class="invalid-feedback">
                                   Please provide a valid county.
                                 </div>
                               </div>
                               <div class="mb-3">
-                                <label for="validationCustom05">Country</label>
-                                <input type="text" class="form-control" id="validationCustom05" placeholder="Country" required>
+                                <label for="country_billing_input">Country</label>
+                                <input type="text" class="form-control" id="country_billing_input" name="country_billing_input" placeholder="Country" required>
                                 <div class="invalid-feedback">
                                   Please provide a valid country.
                                 </div>
                               </div>
                               <div class="mb-3">
-                                <label for="validationCustom06">Post Code</label>
-                                <input type="text" class="form-control" id="validationCustom06" placeholder="Post Code" required>
+                                <label for="postcode_billing_input">Post Code</label>
+                                <input type="text" class="form-control" id="postcode_billing_input" name="postcode_billing_input" placeholder="Post Code" required>
                                 <div class="invalid-feedback">
                                   Please provide a valid postcode.
                                 </div>
@@ -229,12 +225,12 @@
               </li>
               <li class="nav-item">
                 <p>
-                  <h6>Shipping Details</h6>
+                  <h6><strong>Shipping Details</strong></h6>
                   <p>
-                    <div>Shipping Recipient: -</div>
-                    <div>Shipping Address: -</div>
-                    <div>Shipping Postcode: -</div>
-                    <div>Shipping Country: -</div>
+                    <div><strong>Shipping Recipient: </strong>{{shipping_details.recipient}}</div>
+                    <div><strong>Shipping Address: </strong>{{shipping_details.address}}</div>
+                    <div><strong>Shipping Postcode: </strong>{{shipping_details.postcode}}</div>
+                    <div><strong>Shipping Country: </strong>{{shipping_details.country}}</div>
                   </p>
                   <button type="button" class="btn btn-primary btn-dark w-100" data-bs-toggle="modal" data-bs-target="#updateShippngInformationModal">Update Shipping Details</button>
                 </p>
@@ -247,20 +243,20 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        <h6>Shipping Details</h6>
+                        <h6><strong>Shipping Details</strong></h6>
                         <p>
-                          <form class="needs-validation" novalidate>
+                          <form class="needs-validation" novalidate action="/updated_shipping_info" method="post">
                             <div class="form-row">
                               <div class=" mb-3">
-                                <label for="validationCustom01">First Name</label>
-                                <input type="text" class="form-control" id="validationCustom01" placeholder="First Name" required>
+                                <label for="first_name_shipping_input">First Name</label>
+                                <input type="text" class="form-control" id="first_name_shipping_input" name="first_name_shipping_input" placeholder="First Name" required>
                                 <div class="valid-feedback">
                                   Looks good!
                                 </div>
                               </div>
                               <div class=" mb-3">
-                                <label for="validationCustom02">Last Name</label>
-                                <input type="text" class="form-control" id="validationCustom02" placeholder="Last Name" required>
+                                <label for="last_name_shipping_input">Last Name</label>
+                                <input type="text" class="form-control" id="last_name_shipping_input" name="last_name_shipping_input" placeholder="Last Name" required>
                                 <div class="valid-feedback">
                                   Looks good!
                                 </div>
@@ -268,29 +264,29 @@
                             </div>
                             <div class="form-row">
                               <div class="mb-3">
-                                <label for="validationCustom03">City</label>
-                                <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+                                <label for="city_shipping_input">City</label>
+                                <input type="text" class="form-control" id="city_shipping_input" name="city_shipping_input" placeholder="City" required>
                                 <div class="invalid-feedback">
                                   Please provide a valid city.
                                 </div>
                               </div>
                               <div class="mb-3">
-                                <label for="validationCustom04">County</label>
-                                <input type="text" class="form-control" id="validationCustom04" placeholder="County" required>
+                                <label for="county_shipping_input">County</label>
+                                <input type="text" class="form-control" id="county_shipping_input" name="county_shipping_input" placeholder="County" required>
                                 <div class="invalid-feedback">
                                   Please provide a valid county.
                                 </div>
                               </div>
                               <div class="mb-3">
-                                <label for="validationCustom05">Country</label>
-                                <input type="text" class="form-control" id="validationCustom05" placeholder="Country" required>
+                                <label for="country_shipping_input">Country</label>
+                                <input type="text" class="form-control" id="country_shipping_input" name="country_shipping_input" placeholder="Country" required>
                                 <div class="invalid-feedback">
                                   Please provide a valid country.
                                 </div>
                               </div>
                               <div class="mb-3">
-                                <label for="validationCustom06">Post Code</label>
-                                <input type="text" class="form-control" id="validationCustom06" placeholder="Post Code" required>
+                                <label for="postcode_shipping_input">Post Code</label>
+                                <input type="text" class="form-control" id="postcode_shipping_input" name="postcode_shipping_input" placeholder="Post Code" required>
                                 <div class="invalid-feedback">
                                   Please provide a valid postcode.
                                 </div>
@@ -388,10 +384,10 @@
                       </p>
                       <h6>Shipping Details</h6>
                       <p>
-                        <div>Shipping Recipient: -</div>
-                        <div>Shipping Address: -</div>
-                        <div>Shipping Postcode: -</div>
-                        <div>Shipping Country: -</div>
+                        <div>Shipping Recipient: {{shipping_details.recipient}}</div>
+                        <div>Shipping Address: {{shipping_details.address}}</div>
+                        <div>Shipping Postcode: {{shipping_details.postcode}}</div>
+                        <div>Shipping Country: {{shipping_details.country}}</div>
                       </p>
                       <h6>Order Contents</h6>
                       <p>
@@ -543,11 +539,11 @@
                     </p>
                     <h6>Billing Details</h6>
                     <p>
-                      <div>Billing Recipient: -</div>
-                      <div>Billing Address: -</div>
-                      <div>Billing Postcode: -</div>
-                      <div>Billing Country: -</div>
-                      <div>Payment Method: -</div>
+                      <div>Billing Recipient: {{billing_details.recipient}}</div>
+                      <div>Billing Address: {{billing_details.address}}</div>
+                      <div>Billing Postcode: {{billing_details.postcode}}</div>
+                      <div>Billing Country: {{billing_details.country}}</div>
+                      <div>Payment Method: {{billing_details.payment_method}}</div>
                     </p>
                   </div>
                   <div class="modal-footer">
@@ -564,14 +560,7 @@
     </body>
     <footer>
       <div class="mt-5 p-4 bg-dark text-white text-left">
-        <footer class="py-3 my-4">
-          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="homepage.html" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="store.html" class="nav-link px-2 text-muted">Store</a></li>
-            <li class="nav-item"><a href="terms_and_conditions.html" class="nav-link px-2 text-muted">Terms and Conditions</a></li>
-            <li class="nav-item"><a href="privacy_policy.html" class="nav-link px-2 text-muted">Privacy Policy</a></li>
-          </ul>
-          <p class="text-center text-muted">© 2022 | Jawara</p>
-     </div>
+        <a class="nav-link" href="\terms_and_conditions.html" target="_blank">Terms and Conditions</a>
+      </div>
     </footer>
 </html>
