@@ -7,9 +7,22 @@
         <!-- BOOTSTRAP CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+		
+		 <!-- External CSS File-->
+		<link rel="stylesheet" href="css/styles.css">
 
-        <title>Jawara FMS | Store</title>
+
+        <title>Jawara FMS | Customer Portal</title>
     </head>
+	
+	
+	
+	
+	
+
+	
+	
+	
     <body>
       <body style="background-color:#e2e2dc;"></body>
       <!-- NAVBAR MENU -->
@@ -27,6 +40,12 @@
               <li class="nav-item">
                 <a class="nav-link active" href="store.html">Store</a>
               </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown">Customer Portal</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="homepage.html">Logout</a></li>
+                </ul>
+              </li>
             </ul>
           </div>
         </div>
@@ -43,8 +62,452 @@
         <div class="mt-4 p-5 bg-dark text-white rounded">
           <h1>JAWARA FACTORY MANAGEMENT SYSTEM</h1> 
           <div>STORE</div>
+		  
         </div>
+		
+		
+		<!-- Welcome Banner Image -->
+		<div > 
+			<img src="images/tenabang-motors.jpg" alt="Tenabang Motors" width="100%" >
+
+		</div>
+		
+		
       </div>
+
+
+
+
+
+	<!-- STORE PAGE BODY HERE -->
+	
+	<!-- Contents for the Cars -->
+	
+<div class="d-flex flex-wrap justify-content-center p-3">
+	
+	<!-- The Start of Tabs -->
+	
+	<div class="tabbed">
+		<input type="radio" id="tab1" name="css-tabs" checked>
+		<input type="radio" id="tab2" name="css-tabs">
+		<input type="radio" id="tab3" name="css-tabs">
+		<input type="radio" id="tab4" name="css-tabs">
+		
+		
+		<!-- Tab Titles -->
+		<ul class="tabs">
+			<li class="tab"><label for="tab1">Roadster</label></li>
+			<li class="tab"><label for="tab2">Gurami</label></li>
+			<li class="tab"><label for="tab3">Kumbang</label></li>
+			<li class="tab"><label for="tab4">Moa</label></li>
+		</ul>
+		
+		<!-- Tab 1 -->
+		<div class="tab-content" >
+			<h4>Roadster</h4>
+	
+			<!-- Car Roadster Start -->
+			<div class="d-flex flex-wrap justify-content-center p-3" >
+				
+					<!-- Car Image -->
+				<div class="d-flex flex-wrap justify-content-center p-3">
+
+					<img src="images/roadster.jpg" alt="Roaster" width="500" height="334">
+				</div>
+				
+				
+				<!-- Car Customisation Options -->
+				
+				<div class="d-flex flex-wrap justify-content-center p-3">
+
+					<div>
+					
+					<h1>Tenabang Kuda-GT (roadster)</h1>
+					<p>Kindly select your customisation options below</p>
+					
+						<div>
+							<label for="interior">Select Interior Material  </label>
+							
+							<select name="interior" id="interior">
+							  <option value="leather">Leather</option>
+							  <option value="fabric">Fabric</option>
+							  <option value="nylon">Nylon</option>
+
+							</select>
+						</div>	
+
+						<div>
+							<label for="steering-wheel">Steering wheel Cover</label>
+							
+							<select name="steering-wheel" id="steering-wheel">
+							  <option value="red">Red</option>
+							  <option value="black">Black</option>
+							  <option value="white">White</option>
+							</select>
+						</div>
+						<div>
+							<label for="shift-lever">Gear Shift Lever</label>
+							
+							<select name="shift-lever" id="shift-lever">
+							  <option value="short">Short</option>
+							  <option value="long">Long</option>
+							</select>
+						</div>
+						<div>
+							<label for="door-trim">Door Trims</label>
+							
+							<select name="door-trim" id="door-trim">
+							  <option value="leather">Leather</option>
+							  <option value="vinyl">Vinyl</option>
+							</select>
+						</div>
+						<div>
+							<label for="seat-covers">Seat Cover</label>
+							
+							<select name="seat-covers" id="seat-covers">
+							  <option value="red">Red</option>
+							  <option value="black">Black</option>
+							  <option value="white">White</option>
+							</select>
+						</div>		
+						<div>
+							<label for="sunvisor">Sun visor  </label>
+							
+							<select name="sun-visor" id="sunvisor">
+							  <option value="yes">Yes</option>
+							  <option value="no">No</option>
+							</select>
+						</div>
+						
+						<!-- Purchase Button -->
+						<button type="button" class="button">Purchase</button>
+					</div>	
+					
+				</div>
+				
+					<!-- Car Customisation Options End -->
+				
+				
+
+			</div>
+			<!-- Car Roadster End -->
+	
+		</div>
+		
+		
+		<!-- Tab 2 -->		
+		<div class="tab-content" >
+			<h4>Gurami</h4>
+			
+			
+			<!-- Car Gurami Start -->
+			<div class="d-flex flex-wrap justify-content-center p-3" >
+				
+					<!-- Car Image -->
+				<div class="d-flex flex-wrap justify-content-center p-3">
+
+					<img src="images/gurami.jpg" alt="Roaster" width="500" height="290
+					">
+				</div>
+				
+				
+				<!-- Car Customisation Options -->
+				
+				<div class="d-flex flex-wrap justify-content-center p-3">
+
+					<div>
+					
+					<h1>Tenabang Gurami 3.0 (SUV)</h1>
+					<p>Kindly select your customisation options below</p>
+					
+						<div>
+							<label for="interior">Select Interior Material  </label>
+							
+							<select name="interior" id="interior">
+							  <option value="leather">Leather</option>
+							  <option value="fabric">Fabric</option>
+							  <option value="nylon">Nylon</option>
+
+							</select>
+						</div>	
+
+						<div>
+							<label for="steering-wheel">Steering wheel Cover</label>
+							
+							<select name="steering-wheel" id="steering-wheel">
+							  <option value="red">Red</option>
+							  <option value="black">Black</option>
+							  <option value="white">White</option>
+							</select>
+						</div>
+						<div>
+							<label for="shift-lever">Gear Shift Lever</label>
+							
+							<select name="shift-lever" id="shift-lever">
+							  <option value="short">Short</option>
+							  <option value="long">Long</option>
+							</select>
+						</div>
+						<div>
+							<label for="door-trim">Door Trims</label>
+							
+							<select name="door-trim" id="door-trim">
+							  <option value="leather">Leather</option>
+							  <option value="vinyl">Vinyl</option>
+							</select>
+						</div>
+						<div>
+							<label for="seat-covers">Seat Cover</label>
+							
+							<select name="seat-covers" id="seat-covers">
+							  <option value="red">Red</option>
+							  <option value="black">Black</option>
+							  <option value="white">White</option>
+							</select>
+						</div>		
+						<div>
+							<label for="sunvisor">Sun visor  </label>
+							
+							<select name="sun-visor" id="sunvisor">
+							  <option value="yes">Yes</option>
+							  <option value="no">No</option>
+							</select>
+						</div>
+							
+						<!-- Purchase Button -->
+						<button type="button" class="button">Purchase</button>
+						
+					</div>	
+					
+				</div>
+				
+					<!-- Car Customisation Options End -->
+				
+		
+
+    </div>
+			<!-- Car Gurami End -->
+
+		</div>
+		
+		
+		<!-- Tab 3 -->		
+		<div class="tab-content">
+		
+			<h4>Kumbang</h4>
+
+			<!-- Car Kumbang Start -->
+			<div class="d-flex flex-wrap justify-content-center p-3" >
+				
+					<!-- Car Image -->
+				<div class="d-flex flex-wrap justify-content-center p-3">
+
+					<img src="images/kumbang.jpg" alt="Roaster" width="500" height="334">
+				</div>
+				
+				
+				<!-- Car Customisation Options -->
+				
+				<div class="d-flex flex-wrap justify-content-center p-3">
+
+					<div>
+					
+					<h1>Tenabang Kumbang (hatchback)</h1>
+					<p>Kindly select your customisation options below</p>
+					
+						<div>
+							<label for="interior">Select Interior Material  </label>
+							
+							<select name="interior" id="interior">
+							  <option value="leather">Leather</option>
+							  <option value="fabric">Fabric</option>
+							  <option value="nylon">Nylon</option>
+
+							</select>
+						</div>	
+
+						<div>
+							<label for="steering-wheel">Steering wheel Cover</label>
+							
+							<select name="steering-wheel" id="steering-wheel">
+							  <option value="red">Red</option>
+							  <option value="black">Black</option>
+							  <option value="white">White</option>
+							</select>
+						</div>
+						<div>
+							<label for="shift-lever">Gear Shift Lever</label>
+							
+							<select name="shift-lever" id="shift-lever">
+							  <option value="short">Short</option>
+							  <option value="long">Long</option>
+							</select>
+						</div>
+						<div>
+							<label for="door-trim">Door Trims</label>
+							
+							<select name="door-trim" id="door-trim">
+							  <option value="leather">Leather</option>
+							  <option value="vinyl">Vinyl</option>
+							</select>
+						</div>
+						<div>
+							<label for="seat-covers">Seat Cover</label>
+							
+							<select name="seat-covers" id="seat-covers">
+							  <option value="red">Red</option>
+							  <option value="black">Black</option>
+							  <option value="white">White</option>
+							</select>
+						</div>		
+						<div>
+							<label for="sunvisor">Sun visor  </label>
+							
+							<select name="sun-visor" id="sunvisor">
+							  <option value="yes">Yes</option>
+							  <option value="no">No</option>
+							</select>
+						</div>
+						
+						
+						<!-- Purchase Button -->
+						<button type="button" class="button">Purchase</button>												
+						
+					</div>	
+					
+				</div>
+				
+					<!-- Car Customisation Options End -->
+				
+				
+
+			</div>
+			<!-- Car Kumbang End -->
+
+
+
+		</div>
+		
+		
+		<!-- Tab 4 -->		
+		<div class="tab-content">
+			<h4>Moa</h4>
+
+			<!-- Car Moa Start -->
+			<div class="d-flex flex-wrap justify-content-center p-3" >
+				
+					<!-- Car Image -->
+				<div class="d-flex flex-wrap justify-content-center p-3">
+
+					<img src="images/moa.jpg" alt="Roaster" width="500" height="334">
+				</div>
+				
+				
+				<!-- Car Customisation Options -->
+				
+				<div class="d-flex flex-wrap justify-content-center p-3">
+
+					<div>
+					
+					<h1>Tenabang Moa 2.0 (sedan)</h1>
+					<p>Kindly select your customisation options below</p>
+					
+						<div>
+							<label for="interior">Select Interior Material  </label>
+							
+							<select name="interior" id="interior">
+							  <option value="leather">Leather</option>
+							  <option value="fabric">Fabric</option>
+							  <option value="nylon">Nylon</option>
+
+							</select>
+						</div>	
+
+						<div>
+							<label for="steering-wheel">Steering wheel Cover</label>
+							
+							<select name="steering-wheel" id="steering-wheel">
+							  <option value="red">Red</option>
+							  <option value="black">Black</option>
+							  <option value="white">White</option>
+							</select>
+						</div>
+						<div>
+							<label for="shift-lever">Gear Shift Lever</label>
+							
+							<select name="shift-lever" id="shift-lever">
+							  <option value="short">Short</option>
+							  <option value="long">Long</option>
+							</select>
+						</div>
+						<div>
+							<label for="door-trim">Door Trims</label>
+							
+							<select name="door-trim" id="door-trim">
+							  <option value="leather">Leather</option>
+							  <option value="vinyl">Vinyl</option>
+							</select>
+						</div>
+						<div>
+							<label for="seat-covers">Seat Cover</label>
+							
+							<select name="seat-covers" id="seat-covers">
+							  <option value="red">Red</option>
+							  <option value="black">Black</option>
+							  <option value="white">White</option>
+							</select>
+						</div>		
+						<div>
+							<label for="sunvisor">Sun visor  </label>
+							
+							<select name="sun-visor" id="sunvisor">
+							  <option value="yes">Yes</option>
+							  <option value="no">No</option>
+							</select>
+						</div>
+						
+						<!-- Purchase Button -->
+						<button type="button" class="button">Purchase</button>						
+						
+						
+					</div>	
+					
+				</div>
+				
+					<!-- Car Customisation Options End -->
+				
+				
+
+			</div>
+			<!-- Car Moa End -->	
+
+
+		</div>
+	</div>
+
+</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+	<!-- STORE PAGE BODY END -->
+
     </body>
     <footer>
       <div class="mt-5 p-4 bg-dark text-white text-left">
