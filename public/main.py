@@ -2,8 +2,7 @@ from fastapi import FastAPI, Request, UploadFile, File, Form
 from fastapi.responses import HTMLResponse
 import fastapi.responses as _responses
 from fastapi.templating import Jinja2Templates
-import sqlite3, os, shutil
-from PIL import Image
+import sqlite3, os
 
 #creates an instance of fastapi for the webpage to run in
 app = FastAPI()
