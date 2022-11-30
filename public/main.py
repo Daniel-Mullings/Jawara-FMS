@@ -1,7 +1,9 @@
-from fastapi import FastAPI, Request, Body, Form
+from fastapi import FastAPI, Request, UploadFile, File, Form
 from fastapi.responses import HTMLResponse
+import fastapi.responses as _responses
 from fastapi.templating import Jinja2Templates
-import sqlite3, os
+import sqlite3, os, shutil
+from PIL import Image
 
 #creates an instance of fastapi for the webpage to run in
 app = FastAPI()
@@ -100,7 +102,6 @@ def getDataDict(dict_type):
     
 
 
-
 #finds the current directory the program is running in
 file_dir = os.path.dirname(os.path.realpath(__file__))
     
@@ -151,6 +152,13 @@ cursor_add_commands = {"new_account"  : ("""INSERT INTO Accounts VALUES(?, ?, ?,
 
 
 #%%handles when each page loads for the first time
+@app.get("/", response_class=HTMLResponse)
+def index(request: Request):
+        
+    context = {"request" : request}
+    
+    return templates.TemplateResponse("homepage.html", context)
+
 @app.get("/404.html/", response_class=HTMLResponse)
 def index(request: Request):
         
@@ -201,8 +209,23 @@ def index(request: Request):
 
 @app.get("/inventory.html/", response_class=HTMLResponse)
 def index(request: Request):
-        
-    context = {"request" : request}
+    
+    web_inventory_data = []
+    sql_inventory_data = getDetails(file_names["inventory"], cursor_display_commands["inventory"])
+    
+    for row in sql_inventory_data:
+        web_inventory_data.append({
+            "id": row[0], 
+            "name": row[1], 
+            "model_num" : row[2], 
+            "colour" : row[3], 
+            "supplier" : row[4], 
+            "price" : row[5], 
+            "q_in_stock" : row[6], 
+            "q_on_hold" : row[7]}
+            )
+    
+    context = {"request" : request, "web_inventory_data": web_inventory_data}
     
     return templates.TemplateResponse("inventory.html", context)
 
@@ -220,12 +243,12 @@ def index(request: Request):
     
     return templates.TemplateResponse("login.html", context)
 
-@app.get("/operator_time_table.html/", response_class=HTMLResponse)
+@app.get("/Operator_Time_Table.html/", response_class=HTMLResponse)
 def index(request: Request):
         
     context = {"request" : request}
     
-    return templates.TemplateResponse("operator_time_table.html", context)
+    return templates.TemplateResponse("Operator_Time_Table.html", context)
 
 @app.get("/privacy_policy.html/", response_class=HTMLResponse)
 def index(request: Request):
@@ -261,6 +284,28 @@ def index(request: Request):
     context = {"request" : request}
     
     return templates.TemplateResponse("upload.html", context)
+
+#%%handles loading each image
+@app.get("/Logo.png/")
+def root():
+    logo_image = file_dir + "/templates/Logo.png"
+    
+    return _responses.FileResponse (logo_image)
+
+@app.get("/JawaraLogoWithText.png/")
+def root():
+    
+    logo_image = file_dir + "/templates/JawaraLogoWithText.png"
+    
+    return _responses.FileResponse (logo_image)
+
+@app.get("/Grey.png/")
+def root():
+    
+    logo_image = file_dir + "/templates/Grey.png"
+    
+    return _responses.FileResponse (logo_image)
+
 
 #%%handles log in page
 @app.post("/validate_login/", response_class=HTMLResponse)
