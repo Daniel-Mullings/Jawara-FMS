@@ -8,7 +8,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Jawara | Admin_Portal</title>
+      <title>Jawara | Contact Us</title>
       <link rel="icon" href="images/logo1.png"  type="image/x-icon">
 
       <!-- bootstrap css -->
@@ -29,7 +29,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
    </head>
    <!-- body -->
-   <body class="main-layout inner_posituong computer_page">
+   <body class="main-layout inner_posituong contact_page">
       <!-- loader  -->
       <div class="loader_bg">
          <div class="loader"><img src="images/loading.gif" alt="#" /></div>
@@ -66,13 +66,12 @@
                               <li class="nav-item">
                                  <a class="nav-link" href="about.html">About</a>
                               </li>
-
                               <li class="nav-item">
+                                 <a class="nav-link" href="Login.html">Login</a>
+                              </li>
+                              <li class="nav-item active">
                                  <a class="nav-link" href="contact.html">Contact Us</a>
                               </li>
-                              <li class="nav-item">
-                                <a class="nav-link active" href="homepage.html">Admin Portal Logout</a>
-                             </li>
                            </ul>
                         </div>
                      </nav>
@@ -83,81 +82,78 @@
       </header>
       <!-- end header inner -->
       <!-- end header -->
-
-      <!-- Upload Documents -->
-      <div class="car">
-        <div class="container">
-              <div class="col-md-6">
-                 <div class="titlepage">
-                    <h2>Technical Drawing</h2>
-                 </p>
-                    <input class="form-control" type="file" id="technical_drawing" multiple />
-                    <button class="read_more">Upload Now</button>
-                 </div>
-              </div>
-           </div>
-        </div>
+      <!--  contact -->
+      <div class="contact">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Contact Now</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-10 offset-md-1">
+                  <form id="request" class="main_form">
+                     <div class="row">
+                        <div class="col-md-12 ">
+                           <input class="contactus" placeholder="Name" type="type" name="Name"> 
+                        </div>
+                        <div class="col-md-12">
+                           <input class="contactus" placeholder="Email" type="type" name="Email"> 
+                        </div>
+                        <div class="col-md-12">
+                           <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">                          
+                        </div>
+                        <div class="col-md-12">
+                           <textarea class="textarea" placeholder="Message" type="type" Message="Name">Message </textarea>
+                        </div>
+                        <div class="col-md-12">
+                           <button class="send_btn">Send</button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
       </div>
-        <!-- End Upload Documents -->
-
-        <!--image display-->
+      <!-- end contact -->
       
-        <div class="text-center">
-          <img src="images/vehicle1.png" class="img-fluid img-thumbnail">
-          <img src="images/vehicle2.png" class="img-fluid img-thumbnail">
-          <img src="images/vehicle3.png" class="img-fluid img-thumbnail">
-          <img src="images/vehicle4.png" class="img-fluid img-thumbnail">
-          <img src="images/vehicle5.png" class="img-fluid img-thumbnail">
-          <img src="images/vehicle1.png" class="img-fluid img-thumbnail">
-          <img src="images/vehicle2.png" class="img-fluid img-thumbnail">
-          <img src="images/vehicle3.png" class="img-fluid img-thumbnail">
-          <img src="images/vehicle4.png" class="img-fluid img-thumbnail">
-          <img src="images/vehicle5.png" class="img-fluid img-thumbnail">
-          <img src="images/vehicle1.png" class="img-fluid img-thumbnail">
-          <img src="images/vehicle2.png" class="img-fluid img-thumbnail">
-          <img src="images/vehicle3.png" class="img-fluid img-thumbnail">
-          <img src="images/vehicle4.png" class="img-fluid img-thumbnail">
-          <img src="images/vehicle5.png" class="img-fluid img-thumbnail">
-        </div>
-    </div>
-  </div>
+                     
+      <!--  footer -->
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <ul class="nav justify-content-center">
+                     <li class="nav-item"><a href="homepage.html" class="nav-link px-2 text-muted">Home</a></li>
+                     <li class="nav-item"><a href="store.html" class="nav-link px-2 text-muted">Store</a></li>
+                     <li class="nav-item"><a href="terms_and_conditions.html" class="nav-link px-2 text-muted">Terms and Conditions</a></li>
+                     <li class="nav-item"><a href="privacy_policy.html" class="nav-link px-2 text-muted">Privacy Policy</a></li>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <p>© 2022 | Jawara</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+   </body>
+</html>
 
-  
-         <!--  footer -->
-         <footer>
-          <div class="footer">
-             <div class="container">
-                <div class="row">
-                   <div class="col-md-12">
-                      <ul class="nav justify-content-center">
-                      <li class="nav-item"><a href="homepage.html" class="nav-link px-2 text-muted">Home</a></li>
-                      <li class="nav-item"><a href="store.html" class="nav-link px-2 text-muted">Store</a></li>
-                      <li class="nav-item"><a href="terms_and_conditions.html" class="nav-link px-2 text-muted">Terms and Conditions</a></li>
-                      <li class="nav-item"><a href="privacy_policy.html" class="nav-link px-2 text-muted">Privacy Policy</a></li>
-                   </div>
-                </div>
-             </div>
-             <div class="copyright">
-                <div class="container">
-                   <div class="row">
-                      <div class="col-md-12">
-                         <p>© 2022 | Jawara</a></p>
-                      </div>
-                   </div>
-                </div>
-             </div>
-          </div>
-        </footer>
-        <!-- end footer -->
-        <!-- Javascript files-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/jquery-3.0.0.min.js"></script>
-        <!-- sidebar -->
-        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-        <script src="js/custom.js"></script>
-        </body>
-        </html>
-        
-        
