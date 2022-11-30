@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request, UploadFile, File, Form
+from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
 import fastapi.responses as _responses
 from fastapi.templating import Jinja2Templates
@@ -8,7 +8,7 @@ import sqlite3, os
 app = FastAPI()
 
 #creates an instance of jinja templates to be user elsewhere
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="")
 
 #takes a file path and an sql command and executes the command on the correct database
 def getDetails(file_path, cursor_command):
@@ -51,6 +51,8 @@ def AddRow(file_name, cursor_command, details):
     #closes the connection to the file
     connection.commit()
     connection.close()
+    
+    return True
 
 #gets either shipping or billing data
 def getDataDict(dict_type):
@@ -170,6 +172,7 @@ def index(request: Request):
         
     context = {"request" : request}
     
+    #sends you to the login page if it cant load the portal
     try:
         return templates.TemplateResponse("admin_portal.html", context)
     except:
@@ -180,6 +183,7 @@ def index(request: Request):
     
     context = {"request" : request}
     
+    #sends you to the login page if it cant load the portal
     try:
         return templates.TemplateResponse("customer_portal.html", context)
     except:
@@ -209,9 +213,12 @@ def index(request: Request):
 @app.get("/inventory.html/", response_class=HTMLResponse)
 def index(request: Request):
     
-    web_inventory_data = []
+    #gets all the data from inside the inventory database
     sql_inventory_data = getDetails(file_names["inventory"], cursor_display_commands["inventory"])
     
+    #takes all the relevant data from each row of the database and puts it into an array of dictionaries
+    #that the website can then use to display the table
+    web_inventory_data = [] 
     for row in sql_inventory_data:
         web_inventory_data.append({
             "id": row[0], 
@@ -231,7 +238,7 @@ def index(request: Request):
 @app.get("/login.html/", response_class=HTMLResponse)
 def index(request: Request):
     
-    #FOR TESTING PURPOSES ONLY
+    #DISPLAYS ACCOUNT DETAILS FOR TESTING PURPOSES ONLY
     cursor_command = cursor_display_commands["accounts"]
     accounts = getDetails(file_names["accounts"], cursor_command)
     
@@ -287,21 +294,21 @@ def index(request: Request):
 #%%handles loading each image
 @app.get("/Logo.png/")
 def root():
-    logo_image = file_dir + "/templates/Logo.png"
+    logo_image = file_dir + "/Logo.png"
     
     return _responses.FileResponse (logo_image)
 
 @app.get("/JawaraLogoWithText.png/")
 def root():
     
-    logo_image = file_dir + "/templates/JawaraLogoWithText.png"
+    logo_image = file_dir + "/JawaraLogoWithText.png"
     
     return _responses.FileResponse (logo_image)
 
 @app.get("/Grey.png/")
 def root():
     
-    logo_image = file_dir + "/templates/Grey.png"
+    logo_image = file_dir + "/Grey.png"
     
     return _responses.FileResponse (logo_image)
 
@@ -363,18 +370,19 @@ def index(request: Request, email_address: str = Form(...), password: str = Form
 def index(request: Request, first_name: str = Form(...), second_name: str = Form(...), username: str = Form(...), 
           password: str = Form(...), email: str = Form(...), contact_number: str = Form(...), account_type: str = Form(...)):
     
+    #gets all the relevant data from the website and puts it into local variables
     account_id = len(getDetails(file_names["accounts"], cursor_display_commands["accounts"]))
     customer_id = int(str(account_id) + "0" + str(account_id))
     full_name = first_name + " " + second_name
     account_status = "active"
     
+    #puts all the relevant data into a list in the correct order
     register_data = [account_id, customer_id, username, password, email, full_name, contact_number, account_type, account_status]
     
+    #adds the relevant data to the accounts database using the file directory and the list of relevant data
     AddRow(file_names["accounts"], cursor_add_commands["new_account"], register_data)
     
-    print("\n\n\n\n\n")
-    print(cursor_add_commands["new_billing"], customer_id)
-    
+    #adds rows to the billing and shipping databases aswell with temp values so that the user may update them later
     add_id = [customer_id]
     AddRow(file_names["billing_details"], cursor_add_commands["new_billing"], add_id)
     AddRow(file_names["shipping_details"], cursor_add_commands["new_shipping"], add_id)
@@ -383,12 +391,6 @@ def index(request: Request, first_name: str = Form(...), second_name: str = Form
     
     return templates.TemplateResponse("login.html", context)
 
-
-
-
-
-
-
 #%%handles updating the customer portal page
 
 #updates billing information
@@ -396,7 +398,8 @@ def index(request: Request, first_name: str = Form(...), second_name: str = Form
 def updateBillingValues(request: Request, first_name_billing_input: str = Form(...), last_name_billing_input: str = Form(...), 
                     city_billing_input: str = Form(...),county_billing_input: str = Form(...), 
                     country_billing_input: str = Form(...), postcode_billing_input: str = Form(...)):
-     
+    
+    #gets all the relevant data from the website and puts it into local variables
     first_name = first_name_billing_input
     last_name = last_name_billing_input
     full_name = first_name + " " + last_name
@@ -408,6 +411,7 @@ def updateBillingValues(request: Request, first_name_billing_input: str = Form(.
     country = country_billing_input
     postcode = postcode_billing_input
     
+    #puts all the relevant data into a list in the correct order
     new_details = [full_name, address, postcode, country]
     
     #gets users customer id
@@ -446,6 +450,7 @@ def updateShippingValues(request: Request, first_name_shipping_input: str = Form
                     city_shipping_input: str = Form(...),county_shipping_input: str = Form(...), 
                     country_shipping_input: str = Form(...), postcode_shipping_input: str = Form(...)):
 
+    #gets all the relevant data from the website and puts it into local variables
     first_name = first_name_shipping_input
     last_name = last_name_shipping_input
     full_name = first_name + " " + last_name
@@ -457,6 +462,7 @@ def updateShippingValues(request: Request, first_name_shipping_input: str = Form
     country = country_shipping_input
     postcode = postcode_shipping_input
     
+    #puts all the relevant data into a list in the correct order
     new_details = [full_name, address, postcode, country]
     
     #gets users customer id
@@ -492,6 +498,8 @@ def updateShippingValues(request: Request, first_name_shipping_input: str = Form
 #updates the users email
 @app.post("/updated_email", response_class=HTMLResponse)
 def updateEmail(request: Request, email_input: str = Form(...)):
+    
+    #takes the email input from the website and stores it in a local variable
     email = email_input
     
     #updates the billing table
