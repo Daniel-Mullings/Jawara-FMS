@@ -8,7 +8,7 @@ import sqlite3, os
 app = FastAPI()
 
 #creates an instance of jinja templates to be user elsewhere
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="")
 
 #takes a file path and an sql command and executes the command on the correct database
 def getDetails(file_path, cursor_command):
