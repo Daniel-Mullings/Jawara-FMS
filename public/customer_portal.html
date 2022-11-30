@@ -1,62 +1,96 @@
+
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- BOOTSTRAP CSS -->
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Jawara | Admin_Portal</title>
+      <link rel="icon" href="images/logo1.png"  type="image/x-icon">
+
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+          <!-- BOOTSTRAP CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-
-    <title>Jawara | Customer Portal</title>
-    <link rel="shortcut icon" href="\Logo.png">
-    
-</head>
-<body>
-  <body style="background-color:#e2e2dc;"></body>
-  <!-- NAVBAR MENU -->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <div class="container-fluid">
-      <img src="\Logo.png" style="width: 30px; height: 30px;">
-    </a>
-      <a class="navbar-brand" href="\homepage.html">JAWARA</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="\homepage.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="\store.html">Store</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Customer Portal</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="\homepage.html">Logout</a></li>
-            </ul>
-          </li>
-        </ul>
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   </head>
+   <!-- body -->
+   <body class="main-layout inner_posituong computer_page">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
       </div>
-    </div>
-  </nav>
+      <!-- end loader -->
+      <!-- header -->
+      <header>
+         <!-- header inner -->
+         <div class="header">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                     <div class="full">
+                        <div class="center-desk">
+                           <div class="logo">
+                              <a href="homepage.html"><img src="images/logo.png" alt="#" /></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarsExample04">
+                           <ul class="navbar-nav mr-auto">
+                              <li class="nav-item">
+                                 <a class="nav-link" href="homepage.html">Home</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="store.html">Store</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="about.html">About</a>
+                              </li>
 
-      <!-- WEBSITE DEVELOPMENT WARNING -->
-      <div class="alert alert-warning alert-dismissible">
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        <strong>Notice!</strong> This website is still under development
-      </div>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="contact.html">Contact Us</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link active" href="homepage.html">Admin Portal Logout</a>
+                             </li>
+                           </ul>
+                        </div>
+                     </nav>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- end header inner -->
+      <!-- end header -->
 
-      <!-- WEBPAGE JUMBOTRON BANNER -->
-      <div class="container mt-3">
-        <div class="mt-4 p-5 bg-dark text-white rounded">
-          <h1>JAWARA FACTORY MANAGEMENT SYSTEM</h1> 
-          <div>CUSTOMER PORTAL</div>
-        </div>
-      </div>
-      <div class="d-flex flex-wrap justify-content-center p-3">
-        <div class="d-flex flex-wrap justify-content-center p-3">
+
           <!-- Welcome Column -->
           <div class="p-2">
             <h4 class="text-center">Welcome Back, {{name}}</h4> 
@@ -67,7 +101,8 @@
                   <p>
                     <div>{{email}}</div>
                   </p>
-                  <button type="button" class="btn btn-primary btn-dark w-100" data-bs-toggle="modal" data-bs-target="#updateAccountInformationModal">Update Account Details</button>
+                  <p>
+                  <button type="button" style="margin-bottom:9px" style="margin-top:9px" class="btn btn-primary btn-dark w-100" data-bs-toggle="modal" data-bs-target="#updateAccountInformationModal">Update Account Details</button>
                 </p>
                 <!-- Account Update Button Modal -->
                 <div class="modal fade" id="updateAccountInformationModal" tabindex="-1" aria-hidden="true">
@@ -75,7 +110,7 @@
                     <div class="modal-content">
                       <div class="modal-header">
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Update Account Information</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" style="margin-bottom:9px" style="margin-top:9px"  class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
                         <h6>Account Details</h6>
@@ -114,14 +149,14 @@
                         })();
                         </script>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-dark" data-bs-dismiss="modal">Close</button>
+                        <button type="button" style="margin-bottom:9px" style="margin-top:9px" class="btn btn-primary btn-dark" data-bs-dismiss="modal">Close</button>
                       </div>
                     </div>
                   </div>
                 </div>
               </li>
               <li class="nav-item">
-                <button type="button" onclick="changePassword()" class="btn btn-primary btn-dark w-100" >Change Password</button>
+                <button type="button" style="margin-bottom:9px" style="margin-top:9px" onclick="changePassword()" class="btn btn-primary btn-dark w-100" >Change Password</button>
                 <script>
                   function changePassword() {
                     alert("Password Reset Email Sent!");
@@ -137,7 +172,7 @@
                     <div><strong>Billing Postcode: </strong>{{billing_details.postcode}}</div>
                     <div><strong>Billing Country: </strong>{{billing_details.country}}</div>
                   </p>
-                  <button type="button" class="btn btn-primary btn-dark w-100" data-bs-toggle="modal" data-bs-target="#updateBillingInformationModal">Update Billing Details</button>
+                  <button type="button" style="margin-bottom:9px" style="margin-top:9px" class="btn btn-primary btn-dark w-100" data-bs-toggle="modal" data-bs-target="#updateBillingInformationModal">Update Billing Details</button>
                 </p>
                 <!-- Billing Update Button Modal -->
                 <div class="modal fade" id="updateBillingInformationModal" tabindex="-1" aria-hidden="true">
@@ -145,7 +180,7 @@
                     <div class="modal-content">
                       <div class="modal-header">
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Update Billing Information</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" style="margin-bottom:9px" style="margin-top:9px" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
                         <h6><strong>Billing Details</strong></h6>
@@ -221,7 +256,7 @@
                         })();
                         </script>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-dark" data-bs-dismiss="modal">Close</button>
+                        <button type="button" style="margin-bottom:9px" style="margin-top:9px" class="btn btn-primary btn-dark" data-bs-dismiss="modal">Close</button>
                       </div>
                     </div>
                   </div>
@@ -236,7 +271,7 @@
                     <div><strong>Shipping Postcode: </strong>{{shipping_details.postcode}}</div>
                     <div><strong>Shipping Country: </strong>{{shipping_details.country}}</div>
                   </p>
-                  <button type="button" class="btn btn-primary btn-dark w-100" data-bs-toggle="modal" data-bs-target="#updateShippngInformationModal">Update Shipping Details</button>
+                  <button type="button" style="margin-bottom:9px" style="margin-top:9px" class="btn btn-primary btn-dark w-100" data-bs-toggle="modal" data-bs-target="#updateShippngInformationModal">Update Shipping Details</button>
                 </p>
                 <!-- Shipping Update Button Modal -->
                 <div class="modal fade" id="updateShippngInformationModal" tabindex="-1" aria-hidden="true">
@@ -244,7 +279,7 @@
                     <div class="modal-content">
                       <div class="modal-header">
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Update Shipping Information</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" style="margin-bottom:9px" style="margin-top:9px" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
                         <h6><strong>Shipping Details</strong></h6>
@@ -296,7 +331,7 @@
                                 </div>
                               </div>
                             </div>
-                            <button class="btn btn-primary btn-dark" type="submit">Submit form</button>
+                            <button style="margin-bottom:9px" style="margin-top:9px" class="btn btn-primary btn-dark" type="submit">Submit form</button>
                           </form>
                         </p>
                         <script>
@@ -320,7 +355,7 @@
                         })();
                         </script>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-dark" data-bs-dismiss="modal">Close</button>
+                        <button type="button" style="margin-bottom:9px" style="margin-top:9px" class="btn btn-primary btn-dark" data-bs-dismiss="modal">Close</button>
                       </div>
                     </div>
                   </div>
@@ -340,7 +375,7 @@
                   <div class="card-text">Order Date: DD/MM/YYYY</div>
                   <div class="card-text">Order Status: Shipped on DD/MM/YYYY</div>
                   <p class="card-text">Order Description: Lorem Ipsum</p>
-                  <button type="button" class="btn btn-primary btn-dark" data-bs-toggle="modal" data-bs-target="#orderHistoryDisplayModal">
+                  <button type="button" style="margin-bottom:9px" style="margin-top:9px" class="btn btn-primary btn-dark" data-bs-toggle="modal" data-bs-target="#orderHistoryDisplayModal">
                     View Order
                   </button>
                 </div>
@@ -353,7 +388,7 @@
                   <div class="card-text">Order Date: DD/MM/YYYY</div>
                   <div class="card-text">Order Status: Shipped on DD/MM/YYYY</div>
                   <p class="card-text">Order Description: Lorem Ipsum</p>
-                  <button type="button" class="btn btn-primary btn-dark" data-bs-toggle="modal" data-bs-target="#orderHistoryDisplayModal">
+                  <button type="button" style="margin-bottom:9px" style="margin-top:9px" class="btn btn-primary btn-dark" data-bs-toggle="modal" data-bs-target="#orderHistoryDisplayModal">
                     View Order
                   </button>
                 </div>
@@ -366,7 +401,7 @@
                   <div class="card-text">Order Date: DD/MM/YYYY</div>
                   <div class="card-text">Order Status: Shipped on DD/MM/YYYY</div>
                   <p class="card-text">Order Description: Lorem Ipsum</p>
-                  <button type="button" class="btn btn-primary btn-dark" data-bs-toggle="modal" data-bs-target="#orderHistoryDisplayModal">
+                  <button type="button" style="margin-bottom:9px" style="margin-top:9px" class="btn btn-primary btn-dark" data-bs-toggle="modal" data-bs-target="#orderHistoryDisplayModal">
                     View Order
                   </button>
                 </div>
@@ -378,7 +413,7 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <h1 class="modal-title fs-5" id="exampleModalLabel">Order No. #00000</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <button type="button" style="margin-bottom:9px" style="margin-top:9px" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <h6>Order Details</h6>
@@ -478,7 +513,7 @@
                         </script>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-primary btn-dark" data-bs-dismiss="modal">Close</button>
+                      <button type="button" style="margin-bottom:9px" style="margin-top:9px" class="btn btn-primary btn-dark" data-bs-dismiss="modal">Close</button>
                     </div>
                   </div>
                 </div>
@@ -507,7 +542,7 @@
                   <div class="card-text">Invoice Date: DD/MM/YYYY</div>
                   <div class="card-text">Invoice Status: Paid on DD/MM/YYYY</div>
                   <p class="card-text">Invoice Charge: £0.00</p>
-                  <button type="button" class="btn btn-primary btn-dark" data-bs-toggle="modal" data-bs-target="#invoiceHistoryDisplayModal">
+                  <button type="button" style="margin-bottom:9px" style="margin-top:9px" class="btn btn-primary btn-dark" data-bs-toggle="modal" data-bs-target="#invoiceHistoryDisplayModal">
                     View Invoice
                   </button>
                 </div>
@@ -532,7 +567,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Invoice No. #00000</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" style="margin-bottom:9px" style="margin-top:9px" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
                     <h6>Invoice Details</h6>
@@ -551,7 +586,7 @@
                     </p>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-primary btn-dark" data-bs-dismiss="modal">Close</button>
+                    <button type="button" style="margin-bottom:9px" style="margin-top:9px" class="btn btn-primary btn-dark" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -562,16 +597,41 @@
         </div>
       </div>
     </body>
-    <footer>
-      <div class="mt-5 p-4 bg-dark text-white text-left">
-        <footer class="py-3 my-4">
-          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="\homepage.html" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="\store.html" class="nav-link px-2 text-muted">Store</a></li>
-            <li class="nav-item"><a href="\terms_and_conditions.html" class="nav-link px-2 text-muted">Terms and Conditions</a></li>
-            <li class="nav-item"><a href="\privacy_policy.html" class="nav-link px-2 text-muted">Privacy Policy</a></li>
-          </ul>
-          <p class="text-center text-muted">© 2022 | Jawara</p>
-     </div>
-    </footer>
+
+
+      <!--  footer -->
+      <footer>
+        <div class="footer">
+           <div class="container">
+              <div class="row">
+                 <div class="col-md-12">
+                    <ul class="nav justify-content-center">
+                    <li class="nav-item"><a href="homepage.html" class="nav-link px-2 text-muted">Home</a></li>
+                    <li class="nav-item"><a href="store.html" class="nav-link px-2 text-muted">Store</a></li>
+                    <li class="nav-item"><a href="terms_and_conditions.html" class="nav-link px-2 text-muted">Terms and Conditions</a></li>
+                    <li class="nav-item"><a href="privacy_policy.html" class="nav-link px-2 text-muted">Privacy Policy</a></li>
+                 </div>
+              </div>
+           </div>
+           <div class="copyright">
+              <div class="container">
+                 <div class="row">
+                    <div class="col-md-12">
+                       <p>© 2022 | Jawara</a></p>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </footer>
+     <!-- end footer -->
+     <!-- Javascript files-->
+     <script src="js/jquery.min.js"></script>
+     <script src="js/popper.min.js"></script>
+     <script src="js/bootstrap.bundle.min.js"></script>
+     <script src="js/jquery-3.0.0.min.js"></script>
+     <!-- sidebar -->
+     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+     <script src="js/custom.js"></script>
+  </body>
 </html>
