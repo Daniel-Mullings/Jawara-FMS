@@ -637,8 +637,6 @@ def updateEmail(request: Request, email_input: str = Form(...)):
     
     #updates the billing table
     cursor_command = cursor_update_commands["update_email"] + '"' + email + '" WHERE Username = ("' + str(username) + '")'
-    print ("\n\n\n\n\n\n\n")
-    print (cursor_command)
     updateDetails(file_names["accounts"], cursor_command) 
     
     #gets users billing details
