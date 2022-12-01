@@ -291,26 +291,159 @@ def index(request: Request):
     
     return templates.TemplateResponse("upload.html", context)
 
+@app.get("/about.html/", response_class=HTMLResponse)
+def index(request: Request):
+        
+    context = {"request" : request}
+    
+    return templates.TemplateResponse("about.html", context)
+
+@app.get("/contact.html/", response_class=HTMLResponse)
+def index(request: Request):
+        
+    context = {"request" : request}
+    
+    return templates.TemplateResponse("contact.html", context)
+
 #%%handles loading each image
-@app.get("/Logo.png/")
+@app.get("/images/about.jpg/")
 def root():
-    logo_image = file_dir + "/Logo.png"
     
-    return _responses.FileResponse (logo_image)
+    image = file_dir + "/images/about.jpg"
+    
+    return _responses.FileResponse (image)
 
-@app.get("/JawaraLogoWithText.png/")
+@app.get("/images/banner.jpg/")
 def root():
+    image = file_dir + "/images/banner.jpg"
     
-    logo_image = file_dir + "/JawaraLogoWithText.png"
-    
-    return _responses.FileResponse (logo_image)
+    return _responses.FileResponse (image)
 
-@app.get("/Grey.png/")
+@app.get("/images/contact.jpg/")
 def root():
     
-    logo_image = file_dir + "/Grey.png"
+    image = file_dir + "/images/contact.jpg"
     
-    return _responses.FileResponse (logo_image)
+    return _responses.FileResponse (image)
+
+@app.get("/images/cos.png/")
+def root():
+    
+    image = file_dir + "/images/cos.png"
+    
+    return _responses.FileResponse (image)
+
+@app.get("/images/cross.png/")
+def root():
+    
+    image = file_dir + "/images/cross.png"
+    
+    return _responses.FileResponse (image)
+
+@app.get("/images/footer.png/")
+def root():
+    
+    image = file_dir + "/images/footer.png"
+    
+    return _responses.FileResponse (image)
+
+@app.get("/images/item1.png/")
+def root():
+    
+    image = file_dir + "/images/item1.png"
+    
+    return _responses.FileResponse (image)
+
+@app.get("/images/loading.png/")
+def root():
+    
+    image = file_dir + "/images/loading.png"
+    
+    return _responses.FileResponse (image)
+
+@app.get("/images/logo.png/")
+def root():
+    
+    image = file_dir + "/images/logo.png"
+    
+    return _responses.FileResponse (image)
+
+@app.get("/images/log1.png/")
+def root():
+    
+    image = file_dir + "/images/log1.png"
+    
+    return _responses.FileResponse (image)
+
+@app.get("/images/logoimage.png/")
+def root():
+    
+    image = file_dir + "/images/logoimage.png"
+    
+    return _responses.FileResponse (image)
+
+@app.get("/images/menu_icon.png/")
+def root():
+    
+    image = file_dir + "/images/menu_icon.png"
+    
+    return _responses.FileResponse (image)
+
+@app.get("/images/store.png/")
+def root():
+    
+    image = file_dir + "/images/store.png"
+    
+    return _responses.FileResponse (image)
+
+@app.get("/images/store2.png/")
+def root():
+    
+    image = file_dir + "/images/store2.png"
+    
+    return _responses.FileResponse (image)
+
+@app.get("/images/vehicle1.png/")
+def root():
+    
+    image = file_dir + "/images/vehicle1.png"
+    
+    return _responses.FileResponse (image)
+
+@app.get("/images/vehicle2.png/")
+def root():
+    
+    image = file_dir + "/images/vehicle2.png"
+    
+    return _responses.FileResponse (image)
+
+@app.get("/images/vehicle3.png/")
+def root():
+    
+    image = file_dir + "/images/vehicle3.png"
+    
+    return _responses.FileResponse (image)
+
+@app.get("/images/vehicle4.png/")
+def root():
+    
+    image = file_dir + "/vehicle4.png"
+    
+    return _responses.FileResponse (image)
+
+@app.get("/images/vehicle5.png/")
+def root():
+    
+    image = file_dir + "/images/vehicle5.png"
+    
+    return _responses.FileResponse (image)
+
+@app.get("/images/vehicle6.png/")
+def root():
+    
+    image = file_dir + "/images/vehicle6.png"
+    
+    return _responses.FileResponse (image)
 
 
 #%%handles log in page
