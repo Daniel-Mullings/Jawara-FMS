@@ -1,0 +1,358 @@
+.login_body,
+.register_body {
+  font-family: 'Nunito', sans-serif;
+}
+
+.form_header {
+  font-size: 1.5rem;
+}
+
+#email,
+#password,
+#registerEmail,
+#registerPassword,
+#fullName {
+  font-size: 1rem;
+  border: 0;
+  height: 50px;
+  border-radius: 0;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+.body_wallpaper {
+  background-color: rgb(57, 63, 83);
+  /*background-color: rgb(221, 132, 121);*/
+}
+
+.logo_design {
+  font-size: 22px;
+}
+
+.new_message_font {
+  color: #344767;
+}
+
+#myKanban {
+  overflow-x: auto;
+  padding: 20px 0;
+  border-radius: 0.5rem !important;
+}
+.kanban-container {
+  position: relative;
+  box-sizing: border-box;
+  width: auto;
+  box-sizing: border-box;
+}
+
+.kanban-container * {
+  box-sizing: border-box;
+}
+
+.kanban-container:after {
+  clear: both;
+  display: block;
+  content: '';
+}
+
+.kanban-board {
+  position: relative;
+  float: left;
+  background: #f3f2f8 !important;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  width: 20rem !important;
+  border-radius: 0.5rem !important;
+  border: 0;
+}
+
+.kanban-board.disabled-board {
+  opacity: 0.3;
+}
+
+.kanban-board.is-moving.gu-mirror {
+  transform: rotate(3deg);
+}
+
+.kanban-board.is-moving.gu-mirror .kanban-drag {
+  overflow: hidden;
+  padding-right: 50px;
+}
+
+.kanban-board header {
+  font-size: 16px;
+  padding: 15px;
+  color: #f8f9fa !important;
+}
+
+.kanban-board header .kanban-title-board {
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  display: inline;
+  color: #f8f9fa !important;
+}
+
+.kanban-board header .kanban-title-button {
+  float: right;
+}
+
+.kanban-board .kanban-drag {
+  min-height: 200px;
+  padding: 20px;
+}
+
+.kanban-board:after {
+  clear: both;
+  display: block;
+  content: '';
+}
+
+.kanban-item {
+  background: white !important;
+  padding: 15px;
+  margin-bottom: 20px;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  animation: append-animate 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 0.5rem !important;
+}
+
+@keyframes append-animate {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.kanban-item:hover {
+  cursor: move;
+}
+
+.kanban-item:last-child {
+  margin: 0;
+}
+
+.kanban-item.is-moving.gu-mirror {
+  transform: rotate(3deg);
+  height: auto !important;
+}
+
+/* Dragula CSS  */
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+}
+
+.gu-hide {
+  display: none !important;
+}
+
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+.gu-transit {
+  opacity: 0.2 !important;
+  transform: rotate(0deg) !important;
+}
+
+.drag_handler {
+  background: #fff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  float: left;
+  top: -3px;
+  margin-right: 4px;
+}
+
+.drag_handler:hover {
+  cursor: move;
+}
+
+.drag_handler_icon {
+  position: relative;
+  display: block;
+  background: #000;
+  width: 24px;
+  height: 2px;
+  top: 12px;
+  transition: 0.5s ease-in-out;
+}
+
+.drag_handler_icon:before,
+.drag_handler_icon:after {
+  background: #000;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 0.5s ease-in-out;
+}
+
+.drag_handler_icon:before {
+  top: 6px;
+}
+
+.drag_handler_icon:after {
+  bottom: 6px;
+}
+
+.success {
+  background: #00b961;
+}
+
+.backlog {
+  background: rgb(31, 103, 151);
+}
+
+.info {
+  background: #2a92bf;
+}
+
+.warning {
+  background: #f4ce46;
+}
+
+.error {
+  background: #fb7d44;
+}
+
+.custom-button {
+  background-color: #edecf1 !important;
+  border: none;
+  color: rgb(57, 63, 83);
+  padding: 7px 15px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  border-radius: 0.5rem !important;
+}
+
+.custom-button:hover {
+  background-color: #f3f2f8 !important;
+}
+
+.upload-button {
+  background-color: rgb(57, 63, 83);
+  color: #f3f2f8 !important;
+  margin: 10px;
+}
+
+.upload-button:hover {
+  background-color: #f3f2f8 !important;
+  color: rgb(57, 63, 83) !important;
+  border-color: rgb(57, 63, 83) !important;
+}
+
+.upload_button {
+  background-color: rgb(57, 63, 83);
+  color: #f3f2f8 !important;
+  margin-top: 1rem;
+}
+
+/* orders */
+
+.table tbody tr:last-child td {
+  color: rgb(47, 53, 65);
+}
+
+.search-button {
+  background-color: rgb(85, 145, 185) !important;
+  color: #f3f2f8 !important;
+  margin: auto !important;
+  display: flex !important;
+  padding-left: 31.5px !important;
+}
+
+.search-button:hover {
+  background-color: #f3f2f8 !important;
+  color: rgb(57, 63, 83) !important;
+  border-color: rgb(57, 63, 83) !important;
+}
+
+.delete-button {
+  width: 5.75rem;
+  height: 1.875rem;
+  padding: 0;
+  background-color: rgb(216, 78, 78);
+  color: #f3f2f8 !important;
+  margin-left: 1rem;
+}
+
+.delete-button:hover {
+  background-color: #f3f2f8 !important;
+  color: rgb(216, 78, 78) !important;
+  border-color: rgb(216, 78, 78) !important;
+}
+
+.year-bar {
+  margin-right: 2rem !important;
+}
+
+.orders {
+  margin: auto !important;
+  margin-bottom: 3rem !important;
+  color: #f3f2f8 !important;
+  display: flex !important;
+  text-align: center !important;
+  justify-content: center;
+}
+
+.toggle-buttons {
+  display: flex !important;
+}
+
+.toggle-label {
+  color: #f3f2f8 !important;
+}
+
+.view-orders {
+  color: #f3f2f8 !important;
+  margin-left: 2rem !important;
+}
+
+.order-tabs {
+  max-width: 95% !important;
+  margin: auto !important;
+  width: 95% !important;
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+
+.table-head {
+  background-color: rgb(73, 82, 107) !important;
+}
+
+th {
+  color: #f3f2f8 !important;
+}
+
+/* Icon styles */
+
+.order-bag {
+  color: rgb(121, 102, 173) !important;
+}
+
+.view-stocks {
+  margin-top: 3rem;
+}
+
+.filter-title {
+  margin: auto !important;
+  color: rgb(73, 82, 107) !important;
+  display: flex !important;
+  text-align: center !important;
+  justify-content: center !important;
+}
+
+.machine-lineup {
+}
